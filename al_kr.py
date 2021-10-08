@@ -24,10 +24,15 @@ def exccal():
     if '' in probdata:
         msgbox.showerror("Error", "모든 확률을 입력해 주세요")
         return
-    probdata = [float(shipentry[i].get())/100 for i in range(index+1)]
+    try:
+        probdata = [float(shipentry[i].get())/100 for i in range(index+1)]
+    except:
+        msgbox.showerror("Error", "숫자만 입력해 주세요")
+        return
     #Check probability sum
     if sum(probdata) > 1:
         msgbox.showerror("Error", "총확률 100% 초과")
+        return
     #No Pity Computation
     elif pity.get() == 0:
         (avgpull, medpull, stdev) = probtheorem.normalcompute(probdata)
@@ -82,11 +87,20 @@ def printdata(avgpull, medpull, stdev):
 def probcompute():
     #Get probability entries
     probdata = [shipentry[i].get() for i in range(index+1)]
-    buildcount = int(simulcount.get())
     if '' in probdata:
         msgbox.showerror("Error", "모든 확률을 입력해 주세요")
         return
-    probdata = [float(shipentry[i].get())/100 for i in range(index+1)]
+    try:
+        probdata = [float(shipentry[i].get())/100 for i in range(index+1)]
+    except:
+        msgbox.showerror("Error", "숫자만 입력해 주세요")
+        return
+    #Get trial count
+    try:
+        buildcount = int(simulcount.get())
+    except:
+        msgbox.showerror("Error", "숫자만 입력해 주세요")
+        return
     #Check probability sum
     if sum(probdata) > 1:
         msgbox.showerror("Error", "총확률 100% 초과")
