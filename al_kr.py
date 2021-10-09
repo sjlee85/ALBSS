@@ -131,7 +131,7 @@ frame_entry.grid_columnconfigure(3, weight=1)
 
 frame_compute = LabelFrame(root, text="계산")
 frame_compute.grid_rowconfigure(0, weight=1)
-frame_compute.grid_rowconfigure(8, weight=1)
+frame_compute.grid_rowconfigure(9, weight=1)
 frame_compute.grid_columnconfigure(0, weight=1)
 frame_compute.grid_columnconfigure(3, weight=1)
 
