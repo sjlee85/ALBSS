@@ -5,13 +5,24 @@ Korean Version
 S.Lee
 """
 
+import os
 import tkinter.messagebox as msgbox
 from tkinter import *
 import sympy as sp
 import probtheorem
 
+
+#Code to add icon file
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
 root = Tk()
 root.title("벽람항로 건조 계산기")
+root.iconbitmap(resource_path("unicorn.ico"))
 
 global index
 index=0
