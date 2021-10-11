@@ -48,7 +48,7 @@ def mediancompute(ccdf, myrange):
                 return i
             else:
                 return i-1
-    msgbox.showerror("Error", "중간값 계산 오류")
+    msgbox.showerror("Error", "Median computation error")
     return 0
 
 #Estimation probability from CDF and proposed build count
